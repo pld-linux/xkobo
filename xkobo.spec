@@ -13,7 +13,7 @@ Source0:	http://www.redhead.dk/download/pub/Xkobo/%{name}-%{version}.tar.gz
 Patch0:		%{name}-imake.patch
 Patch1:		%{name}-man.patch
 URL:		http://seki.math.hokudai.ac.jp:20080/xkobo-current.html
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
