@@ -1,0 +1,17 @@
+--- xkobo-1.11+w01/xkobo.man~	Fri Dec 20 14:39:37 2002
++++ xkobo-1.11+w01/xkobo.man	Fri Dec 20 14:39:37 2002
+@@ -1,4 +1,4 @@
+-.TH XKOBO 1 "29 September 1995"
++.TH XKOBO 6 "29 September 1995"
+ .SH NAME
+ xkobo - a video-oriented game for X
+ .SH SYNOPSIS
+@@ -42,7 +42,7 @@
+ Print the high score table to standard out, and exit.
+ 
+ .SH FILES
+-/usr/local/games/xkobo-scores/*  -  records of the game.
++/usr/games/xkobo-scores/*  -  records of the game.
+ 
+ .SH AUTHOR
+ Akira Higuchi (a-higuti@math.hokudai.ac.jp)
