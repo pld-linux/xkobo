@@ -1,6 +1,6 @@
 Summary:	X11 space arcade game
 Summary(fr):	Jeu d'arcade dans l'espace
-Summary(pl):	Gra zrecznosciowa rozgrywajaca sie w kosmosie
+Summary(pl):	Gra zrêczno¶ciowa rozgrywaj±ca siê w kosmosie
 Name:		xkobo
 Version:	1.11+w01
 Release:	1
@@ -8,7 +8,7 @@ Group:		X11/Applications/Games
 License:	GPL
 Vendor:		Akira Higuchi <a-higuti@math.hokudai.ac.jp>
 Source0:	http://www.redhead.dk/download/pub/Xkobo/%{name}-%{version}.tar.gz
-Source1:	%{name}.desktop
+#Source1:	%{name}.desktop
 Patch0:		%{name}-imake.patch
 Patch1:		%{name}-man.patch
 URL:		http://seki.math.hokudai.ac.jp:20080/xkobo-current.html
@@ -16,7 +16,7 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_gamesdir	%{_usr}/games
+%define		_scoredir	%{_var}/games
 
 %description
 Xkobo is a arcade video game for X11. The goal is to destroy the enemi
@@ -41,21 +41,26 @@ floty. Czeka Was du¿o godzin dobrej zabawy!
 
 %build
 xmkmf -a
-export RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
-%{__make} xkobo
+%{__make} xkobo \
+	CDEBUGFLAGS="%{rpmcflags}" \
+	HSCORE_DIR=%{_scoredir}/xkobo-scores
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install install.man DESTDIR="$RPM_BUILD_ROOT"
-mv -f $RPM_BUILD_ROOT/%{_mandir}/man{1,6}
-mv -f $RPM_BUILD_ROOT/%{_mandir}/man6/xkobo.{1,6}x
 
-%files
-%defattr(644,root,root,755)
-%doc CHANGES COPYING README*
-%attr(2755,games,games) %{_bindir}/xkobo
-%{_mandir}/man6/*
-%attr(0775,games,games) %dir %{_gamesdir}/xkobo-scores
+%{__make} install install.man \
+	DESTDIR="$RPM_BUILD_ROOT" \
+	HSCORE_DIR=%{_scoredir}/xkobo-scores
+
+mv -f $RPM_BUILD_ROOT%{_mandir}/man{1,6}
+mv -f $RPM_BUILD_ROOT%{_mandir}/man6/xkobo.{1,6}x
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc CHANGES README*
+%attr(2755,root,games) %{_bindir}/xkobo
+%{_mandir}/man6/*
+%attr(0775,root,games) %dir %{_scoredir}/xkobo-scores
