@@ -1,0 +1,37 @@
+--- xkobo-1.11+w01/Imakefile.orig	Fri Jan 10 03:29:36 1997
++++ xkobo-1.11+w01/Imakefile	Thu Dec 19 21:53:38 2002
+@@ -6,7 +6,7 @@
+ SHIPS       = 5
+ 
+ /*  RECORDS  */
+-HSCORE_DIR  = /usr/local/games/xkobo-scores
++HSCORE_DIR  = /usr/games/xkobo-scores
+ 
+ /*  C++ COMPILER  */
+ /*  CXX         = g++  */
+@@ -18,7 +18,7 @@
+ 
+ #ifdef SECURE_SCOREFILES
+ /*  ADMINISTER OF THE GAME  */
+-XKOBO_ADMINISTER = games
++XKOBO_ADMINISTER = games:games
+ #endif
+ 
+ /* ------------------------------------------------------------------- */
+@@ -69,11 +69,11 @@
+ 
+ #ifdef SECURE_SCOREFILES
+ install::
+-	if [ -d $(HSCORE_DIR) ]; then chmod 755 $(HSCORE_DIR); \
+-	else mkdirhier $(HSCORE_DIR); chmod 755 $(HSCORE_DIR); fi
+-	chown $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
+-	chown -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
+-	chmod 4755 $(BINDIR)/xkobo
++	if [ -d $(DESTDIR)$(HSCORE_DIR) ]; then chmod 755 $(DESTDIR)$(HSCORE_DIR); \
++	else mkdirhier $(DESTDIR)$(HSCORE_DIR); chmod 755 $(DESTDIR)$(HSCORE_DIR); fi
++	/* chown $(XKOBO_ADMINISTER) $(DESTDIR)$(BINDIR)/xkobo
++	chown -R $(XKOBO_ADMINISTER) $(DESTDIR)$(HSCORE_DIR)
++	chmod 4755 $(DESTDIR)$(BINDIR)/xkobo */
+ #else /* SECURE_SCOREFILES */
+ install::
+ 	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
