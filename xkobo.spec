@@ -8,6 +8,7 @@ Group:		X11/Applications/Games
 License:	GPL
 Vendor:		Akira Higuchi <a-higuti@math.hokudai.ac.jp>
 Source0:	http://www.redhead.dk/download/pub/Xkobo/%{name}-%{version}.tar.gz
+# Source0-md5:	ff5365868ef825e34eb2504c0ed7a58f
 #Source1:	%{name}.desktop
 Patch0:		%{name}-imake.patch
 Patch1:		%{name}-man.patch
