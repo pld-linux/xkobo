@@ -1,6 +1,6 @@
 Summary:	X11 space arcade game
-Summary(fr.UTF-8):   Jeu d'arcade dans l'espace
-Summary(pl.UTF-8):   Gra zręcznościowa rozgrywająca się w kosmosie
+Summary(fr.UTF-8):	Jeu d'arcade dans l'espace
+Summary(pl.UTF-8):	Gra zręcznościowa rozgrywająca się w kosmosie
 Name:		xkobo
 Version:	1.11+w01
 Release:	1
