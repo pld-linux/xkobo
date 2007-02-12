@@ -1,6 +1,6 @@
 Summary:	X11 space arcade game
-Summary(fr):	Jeu d'arcade dans l'espace
-Summary(pl):	Gra zrêczno¶ciowa rozgrywaj±ca siê w kosmosie
+Summary(fr.UTF-8):   Jeu d'arcade dans l'espace
+Summary(pl.UTF-8):   Gra zrÄ™cznoÅ›ciowa rozgrywajÄ…ca siÄ™ w kosmosie
 Name:		xkobo
 Version:	1.11+w01
 Release:	1
@@ -24,16 +24,16 @@ Xkobo is a arcade video game for X11. The goal is to destroy the enemi
 bases. But the enemi will fire at you and send fighter spacecrafts to
 get you. You'll have hours and hours of fun with this game.
 
-%description -l fr
-Xkobo est un jeux video d'arcade pour X11. Le but est de détruire les
+%description -l fr.UTF-8
+Xkobo est un jeux video d'arcade pour X11. Le but est de dÃ©truire les
 bases enemies. Mais l'enemi fera feu sur vous et vous enverra des
 navettes de chasse pour vous avoir. Vous aurez des heures et des
 heures de plaisir avec ce jeu.
 
-%description -l pl
-Xkobo to gra zrêczno¶ciowa dla X11. Jej celem jest niszczenie wrogich
-baz. Wrogowie jednak bêd± strzelaæ do Was i broniæ siê z pomoc± swojej
-floty. Czeka Was du¿o godzin dobrej zabawy!
+%description -l pl.UTF-8
+Xkobo to gra zrÄ™cznoÅ›ciowa dla X11. Jej celem jest niszczenie wrogich
+baz. Wrogowie jednak bÄ™dÄ… strzelaÄ‡ do Was i broniÄ‡ siÄ™ z pomocÄ… swojej
+floty. Czeka Was duÅ¼o godzin dobrej zabawy!
 
 %prep
 %setup -q
